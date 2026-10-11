@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — God's Way Christian Baptist Church</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Karla:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-text">
+        <span class="brand-name">God's Way</span>
+        <span class="brand-sub">Christian Baptist Church &middot; The Way</span>
+      </span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="about.html">About</a>
+      <a href="ministries.html">Ministries</a>
+      <a href="sermons.html">Sermons</a>
+      <a href="events.html">Events</a>
+      <a href="staff.html">Leadership</a>
+      <a href="visit.html">Visit</a>
+      <a href="contact.html">Contact</a>
+      <a class="nav-give" href="give.html">Give</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-head wrap">
+    <span class="eyebrow">Reach Out</span>
+    <h1>Contact Us</h1>
+    <p class="wide">Questions about a ministry, visiting, or anything else? Send us a message or reach out directly.</p>
+  </section>
+
+  <section class="block">
+    <div class="wrap" style="display:flex; gap:48px; flex-wrap:wrap;">
+      <form class="form-grid" action="mailto:gwcbctw@yahoo.com" method="post" enctype="text/plain">
+        <div>
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required>
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit" style="align-self:flex-start; border:none; cursor:pointer;">Send message</button>
+      </form>
+
+      <div style="flex:1 1 260px;">
+        <h3>Direct Contact</h3>
+        <p>1101 W. 2nd Street<br>Taylor, TX 76574</p>
+        <p><a href="tel:+15125603938">512-560-3938</a></p>
+        <p>Facebook: <a href="https://www.facebook.com/gwcbctheway/" target="_blank" rel="noopener">facebook.com/gwcbctheway</a></p>
+        <div class="needs-content">
+          <span class="tag">Setup Needed</span>
+          <p>Right now this form opens the visitor's email app addressed to <code>gwcbctw@yahoo.com</code>. For messages to land directly in your inbox without opening an email app, connect a free <strong>Formspree</strong> form instead (swap the form's <code>action</code> attribute for the endpoint Formspree gives you).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-col">
+      <span class="brand-name">God's Way Christian Baptist Church</span>
+      <p>"The Way" &middot; Taylor, Texas</p>
+      <p>Facebook: <a href="https://www.facebook.com/gwcbctheway/" target="_blank" rel="noopener">facebook.com/gwcbctheway</a></p>
+    </div>
+    <div class="footer-col">
+      <span class="footer-heading">Visit</span>
+      <p>1101 W. 2nd Street<br>Taylor, TX 76574</p>
+      <p><a href="tel:+15125603938">512-560-3938</a></p>
+    </div>
+    <div class="footer-col">
+      <span class="footer-heading">Service Times</span>
+      <p>Sunday School — 10:30 AM<br>Worship — 11:30 AM<br>Wed Bible Study — 7:00 PM (Zoom)</p>
+    </div>
+    <div class="footer-col">
+      <span class="footer-heading">Quick Links</span>
+      <p><a href="give.html">Give Online</a></p>
+      <p><a href="sermons.html">Watch Sermons</a></p>
+      <p><a href="contact.html">Contact Us</a></p>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <p>&copy; <span id="year"></span> God's Way Christian Baptist Church. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
