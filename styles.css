@@ -3,18 +3,18 @@
 :root {
   color-scheme: light dark;
 
-  --bg: #F7F2E7;
-  --bg-alt: #EDE4D1;
-  --surface: #FFFDF8;
-  --ink: #202839;
-  --ink-soft: #655C48;
-  --ink-faint: #8C8267;
-  --accent: #A06A1E;
-  --accent-strong: #7A4F14;
-  --wine: #7A2E3A;
-  --wine-strong: #5E2029;
-  --border: #DCCFAE;
-  --focus: #3A6E8F;
+  --bg: #EEF0FA;
+  --bg-alt: #E0E4F5;
+  --surface: #FFFFFF;
+  --ink: #222B4C;
+  --ink-soft: #5B6485;
+  --ink-faint: #8891AC;
+  --accent: #B98A4A;
+  --accent-strong: #8E6630;
+  --wine: #3B4C9C;
+  --wine-strong: #2D3B7A;
+  --border: #CDD3EC;
+  --focus: #3B4C9C;
 
   --font-display: 'Fraunces', 'Iowan Old Style', Georgia, serif;
   --font-body: 'Karla', 'Segoe UI', system-ui, sans-serif;
@@ -22,34 +22,34 @@
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #161A22;
-    --bg-alt: #1E232D;
-    --surface: #1B2029;
-    --ink: #EDE7D8;
-    --ink-soft: #B6AD96;
-    --ink-faint: #837A64;
-    --accent: #DBA955;
-    --accent-strong: #EFC784;
-    --wine: #D38090;
-    --wine-strong: #E6A3B0;
-    --border: #333A47;
-    --focus: #7FB6D9;
+    --bg: #171B2E;
+    --bg-alt: #1F2440;
+    --surface: #1C2038;
+    --ink: #E4E7F7;
+    --ink-soft: #AAB0D4;
+    --ink-faint: #7B82A8;
+    --accent: #E0B274;
+    --accent-strong: #EFC98F;
+    --wine: #8491DB;
+    --wine-strong: #A3AEE6;
+    --border: #343B5E;
+    --focus: #8491DB;
   }
 }
 
 :root[data-theme="dark"] {
-  --bg: #161A22;
-  --bg-alt: #1E232D;
-  --surface: #1B2029;
-  --ink: #EDE7D8;
-  --ink-soft: #B6AD96;
-  --ink-faint: #837A64;
-  --accent: #DBA955;
-  --accent-strong: #EFC784;
-  --wine: #D38090;
-  --wine-strong: #E6A3B0;
-  --border: #333A47;
-  --focus: #7FB6D9;
+  --bg: #171B2E;
+  --bg-alt: #1F2440;
+  --surface: #1C2038;
+  --ink: #E4E7F7;
+  --ink-soft: #AAB0D4;
+  --ink-faint: #7B82A8;
+  --accent: #E0B274;
+  --accent-strong: #EFC98F;
+  --wine: #8491DB;
+  --wine-strong: #A3AEE6;
+  --border: #343B5E;
+  --focus: #8491DB;
 }
 
 * { box-sizing: border-box; }
@@ -128,12 +128,29 @@ a { color: inherit; }
   color: var(--ink);
 }
 
-.brand-mark {
-  width: 15px;
-  height: 20px;
-  border-radius: 7.5px 7.5px 0 0;
-  background: var(--accent);
+.brand-logo-chip {
+  display: flex;
+  align-items: center;
   flex-shrink: 0;
+}
+
+.brand-logo {
+  height: 44px;
+  width: auto;
+  display: block;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .brand-logo-chip {
+    background: #FFFFFF;
+    padding: 6px 12px;
+    border-radius: 10px;
+  }
+}
+:root[data-theme="dark"] .brand-logo-chip {
+  background: #FFFFFF;
+  padding: 6px 12px;
+  border-radius: 10px;
 }
 
 .brand-text { display: flex; flex-direction: column; line-height: 1.2; }
