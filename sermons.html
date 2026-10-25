@@ -45,8 +45,8 @@
     <div class="wrap">
       <div class="section-head">
         <span class="eyebrow">Live Sundays at 11:30 AM</span>
-        <h2 id="worship-heading">Watch our latest message</h2>
-        <p class="wide" id="worship-copy">We're not live right now, but you can watch our most recent service below. This player automatically switches to the live broadcast once we start streaming Sunday morning — no need to refresh or come back.</p>
+        <h2 id="worship-heading">This week's worship service</h2>
+        <p class="wide" id="worship-copy">The player below shows this week's scheduled service — a countdown before we go live, the live broadcast once we start, and the replay afterward. No need to refresh.</p>
       </div>
       <div class="map-frame">
         <iframe
@@ -63,22 +63,16 @@
 
 <script>
 (function () {
-  var parts = new Intl.DateTimeFormat('en-US', {
-    timeZone: 'America/Chicago',
-    weekday: 'short',
-    hour: 'numeric',
-    hour12: false
-  }).formatToParts(new Date());
-  var weekday, hour;
-  parts.forEach(function (p) {
-    if (p.type === 'weekday') weekday = p.value;
-    if (p.type === 'hour') hour = parseInt(p.value, 10);
-  });
-  var isLiveWindow = weekday === 'Sun' && hour >= 11 && hour < 13;
-  if (isLiveWindow) {
-    document.getElementById('worship-player').src = 'https://www.youtube.com/embed/live_stream?channel=UCqJFI-W5NyrGbmb9BxhhzpA';
-    document.getElementById('worship-heading').textContent = "We're live right now!";
-    document.getElementById('worship-copy').textContent = 'Join us — the player below is streaming live. If it hasn\'t started quite yet, give it a moment or refresh.';
+  // Update this each week with the scheduled stream's video ID (the part
+  // after /live/ or ?v= in its share link). Leave as '' when nothing is
+  // scheduled, and the player below falls back to the latest uploaded sermon.
+  var LIVE_VIDEO_ID = 'BieqLrM_gJk';
+
+  if (LIVE_VIDEO_ID) {
+    document.getElementById('worship-player').src = 'https://www.youtube.com/embed/' + LIVE_VIDEO_ID;
+  } else {
+    document.getElementById('worship-heading').textContent = 'Watch our latest message';
+    document.getElementById('worship-copy').textContent = "We're not live right now, but you can watch our most recent service below.";
   }
 })();
 </script>
