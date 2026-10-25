@@ -45,13 +45,14 @@
     <div class="wrap">
       <div class="section-head">
         <span class="eyebrow">Live Sundays at 11:30 AM</span>
-        <h2>Watch worship live</h2>
-        <p class="wide">The player below goes live automatically when we start streaming Sunday morning — no need to refresh. Outside of service times it will appear blank, since nothing is airing; use the button below to watch past messages or catch our next livestream on YouTube.</p>
+        <h2 id="worship-heading">Watch our latest message</h2>
+        <p class="wide" id="worship-copy">We're not live right now, but you can watch our most recent service below. This player automatically switches to the live broadcast once we start streaming Sunday morning — no need to refresh or come back.</p>
       </div>
       <div class="map-frame">
         <iframe
-          src="https://www.youtube.com/embed/live_stream?channel=UCqJFI-W5NyrGbmb9BxhhzpA"
-          title="God's Way Christian Baptist Church live stream"
+          id="worship-player"
+          src="https://www.youtube.com/embed/videoseries?list=UUqJFI-W5NyrGbmb9BxhhzpA"
+          title="God's Way Christian Baptist Church sermons"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen></iframe>
       </div>
@@ -59,6 +60,28 @@
     </div>
   </section>
 </main>
+
+<script>
+(function () {
+  var parts = new Intl.DateTimeFormat('en-US', {
+    timeZone: 'America/Chicago',
+    weekday: 'short',
+    hour: 'numeric',
+    hour12: false
+  }).formatToParts(new Date());
+  var weekday, hour;
+  parts.forEach(function (p) {
+    if (p.type === 'weekday') weekday = p.value;
+    if (p.type === 'hour') hour = parseInt(p.value, 10);
+  });
+  var isLiveWindow = weekday === 'Sun' && hour >= 11 && hour < 13;
+  if (isLiveWindow) {
+    document.getElementById('worship-player').src = 'https://www.youtube.com/embed/live_stream?channel=UCqJFI-W5NyrGbmb9BxhhzpA';
+    document.getElementById('worship-heading').textContent = "We're live right now!";
+    document.getElementById('worship-copy').textContent = 'Join us — the player below is streaming live. If it hasn\'t started quite yet, give it a moment or refresh.';
+  }
+})();
+</script>
 
 <footer class="site-footer">
   <div class="wrap footer-grid">
